@@ -2,7 +2,7 @@ import {chromium, Page, Browser} from 'playwright';
 import * as scrape from './scraping-elements';
 import fs from 'fs';
 
-const username = '/' + 'mukhitkwo';
+const username = '/' + 'torvalds';
 const githubURL: string = 'https://github.com';
 const logValues: boolean = false;
 const headless: boolean = false;

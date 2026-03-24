@@ -2,6 +2,17 @@
     {
         "about": null,
         "languages": {
+            "TypeScript": 77,
+            "JavaScript": 23
+        },
+        "stars": 0,
+        "forks": 0,
+        "lastUpdate": "Mar 24, 2026, 4:50 PM GMT",
+        "readme": "Update username and run: npx tsx .\\main.ts"
+    },
+    {
+        "about": null,
+        "languages": {
             "Jupyter Notebook": 92.9,
             "Python": 7.1
         },
@@ -53,7 +64,7 @@
         },
         "stars": 4,
         "forks": 1,
-        "lastUpdate": "Dec 16, 2024, 4:16 PM GMT",
+        "lastUpdate": "Mar 21, 2024, 4:31 PM GMT",
         "readme": "This project was made by MukhitKwo in 2024\nDiscord: mukhitkwo\nTwitter/X: @mukhitkwo"
     }
 ]
