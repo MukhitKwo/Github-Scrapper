@@ -98,9 +98,11 @@ async function getAllReposData(page: Page, repoLinks: string[])
         await page.goto(repoLink);
 
         console.log('Scrapping ' + repoLink + ':');
+        
         await page.waitForLoadState('load');
-
-        const repoData = await getRepoData(page);
+        
+        const repoName: string = repoLink.split('/').pop()!;
+        const repoData = await getRepoData(page, repoName);
 
         if (repoData) 
         {
@@ -117,6 +119,7 @@ async function getAllReposData(page: Page, repoLinks: string[])
 }
 
 interface RepoData {
+    name: string;
     about: string | null;
     languages: Record<string, number>;
     stars: number;
@@ -125,7 +128,7 @@ interface RepoData {
     readme: string;
 }
 
-async function getRepoData(page: Page) 
+async function getRepoData(page: Page, name: string) 
 {
     const mainPanel = page.locator('div.prc-PageLayout-ContentWrapper-gR9eG');
     const sidePanel = page.locator('div.prc-PageLayout-PaneWrapper-pHPop.pr-2');
@@ -153,7 +156,7 @@ async function getRepoData(page: Page)
     const lastUpdate = await scrape.getLastUpdate(mainPanel);
     logValue(`Last Update: ${lastUpdate}`);
 
-    const repoData: RepoData = {about, languages, stars, forks, lastUpdate, readme};
+    const repoData: RepoData = {name, about, languages, stars, forks, lastUpdate, readme};
 
     return repoData;
 }
