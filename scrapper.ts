@@ -37,7 +37,7 @@ async function main()
     }
     catch (error) 
     {
-        logValue(error as string);
+        console.log(error as string);
     }
 }
 
@@ -102,6 +102,8 @@ async function getAllReposData(page: Page, repoLinks: string[])
         await page.waitForLoadState('load');
         
         const repoName: string = repoLink.split('/').pop()!;
+        logValue(repoName);
+
         const repoData = await getRepoData(page, repoName);
 
         if (repoData) 
