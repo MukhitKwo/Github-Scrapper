@@ -1,5 +1,17 @@
 [
     {
+        "name": "Github-Scrapper",
+        "about": "Github scrapper that returns basic info of all the user's public repos",
+        "languages": {
+            "TypeScript": 78.1,
+            "JavaScript": 21.9
+        },
+        "stars": 0,
+        "forks": 0,
+        "lastUpdate": "Mar 25, 2026, 3:41 PM GMT",
+        "readme": "Update username and run:\n\nnpx tsx .\\scrapper.ts\n\n\nThe scrapper returns a json file with the repo's name, about, languages, stars, forks, last commit date and the README"
+    },
+    {
         "name": "Neural-Network",
         "about": null,
         "languages": {
@@ -8,7 +20,7 @@
         },
         "stars": 0,
         "forks": 0,
-        "lastUpdate": "Mar 22, 2026, 8:46 PM GMT",
+        "lastUpdate": "Mar 24, 2026, 11:22 PM GMT",
         "readme": ""
     },
     {
@@ -21,18 +33,6 @@
         "forks": 1,
         "lastUpdate": "Mar 24, 2026, 5:28 PM GMT",
         "readme": "This robot was made as a Final Year Project for my high school, in 2024.\nUsed Arduino programming language.\n"
-    },
-    {
-        "name": "Github-Scrapper",
-        "about": "Github scrapper that returns basic info of all the user's public repos",
-        "languages": {
-            "TypeScript": 77.5,
-            "JavaScript": 22.5
-        },
-        "stars": 0,
-        "forks": 0,
-        "lastUpdate": "Mar 24, 2026, 5:10 PM GMT",
-        "readme": "Update username and run:\n\nnpx tsx .\\scrapper.ts\n\n\nThe scrapper returns a json file with the repo's name, about, languages, stars, forks, last commit date and the README"
     },
     {
         "name": "Wrenchly",

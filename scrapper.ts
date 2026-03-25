@@ -14,7 +14,7 @@ export function logValue(message: string | number)
     }
 }
 
-async function scrapeGithub(username: string) 
+export async function scrapeGithub(username: string) 
 {
     const url = GITHUB_URL + ('/' + username) + '?tab=repositories';
 
