@@ -4,7 +4,7 @@ import fs from 'fs';
 
 const GITHUB_URL: string = 'https://github.com';
 const LOGVALUES: boolean = false;
-const headless: boolean = false;
+const HEADLESS: boolean = true;
 
 export function logValue(message: string | number) 
 {
@@ -21,7 +21,7 @@ export async function scrapeGithub(username: string)
     try 
     {
         const browser = await chromium.launch({
-            HEADLESS: headless
+            HEADLESS: HEADLESS
         });
 
         const page = await openPage(browser, url);
@@ -167,7 +167,7 @@ async function getRepoData(page: Page, name: string)
 }
 
 const args: string[] = process.argv.slice(2);
-let username: string = 'MukhitKwo';
+let username: string = 'MukhitKwo'; // default username
 
 if (args.length > 0)
 {

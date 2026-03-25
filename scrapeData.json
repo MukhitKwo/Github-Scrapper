@@ -8,8 +8,8 @@
         },
         "stars": 0,
         "forks": 0,
-        "lastUpdate": "Mar 25, 2026, 3:41 PM GMT",
-        "readme": "Update username and run:\n\nnpx tsx .\\scrapper.ts\n\n\nThe scrapper returns a json file with the repo's name, about, languages, stars, forks, last commit date and the README"
+        "lastUpdate": "Mar 25, 2026, 3:48 PM GMT",
+        "readme": "GitHub Repository Scraper\n\nA TypeScript tool using Playwright to extract data from a GitHub user's public repositories and save it as a structured JSON file.\n\nFeatures\nRepository Discovery: Crawls the repositories tab of a specific user to find all public projects.\nData Extraction: Navigates to each repository to collect:\nRepository name and \"About\" description.\nLanguage distribution statistics.\nStar and Fork counts.\nREADME content and last update timestamp.\nJSON Export: Automatically writes all collected data to a formatted scrapeData.json file.\nTechnical Stack\nLanguage: TypeScript\nAutomation: Playwright (Chromium)\nEnvironment: Node.js\nInstallation\n\nClone the repository:\n\ngit clone <repository-url>\ncd <repository-directory>\n\nInstall dependencies:\n\nnpm install\n\nInstall Playwright browser:\n\nnpx playwright install chromium\nUsage\n\nRun the script using ts-node. You can provide a GitHub username as a command-line argument.\n\n# To scrape a specific user\nnpx ts-node scrapper.ts --username\n\n# If no argument is provided, it defaults to the username defined in the script\nnpx ts-node scrapper.ts\nConfiguration\n\nThe following variables can be adjusted within the source code:\n\nHEADLESS: Set to false to see the browser window during execution.\nLOGVALUES: Set to true to print scraped data directly to the console.\nData Structure\n\nThe output scrapeData.json follows this format:\n\n[\n  {\n    \"name\": \"repository-name\",\n    \"about\": \"Description text\",\n    \"languages\": { \"TypeScript\": 90, \"HTML\": 10 },\n    \"stars\": 5,\n    \"forks\": 1,\n    \"lastUpdate\": \"Mar 25, 2026\",\n    \"readme\": \"Full README text content\"\n  }\n]\n\nNote: This scraper relies on specific GitHub CSS selectors. If GitHub updates their site layout, the selectors in the script may require updates.\n\nWould you like me to create a .gitignore file to ensure your node_modules and generated JSON files aren't tracked?"
     },
     {
         "name": "Neural-Network",
@@ -20,7 +20,7 @@
         },
         "stars": 0,
         "forks": 0,
-        "lastUpdate": "Mar 24, 2026, 11:22 PM GMT",
+        "lastUpdate": "Mar 22, 2026, 8:46 PM GMT",
         "readme": ""
     },
     {
@@ -58,7 +58,7 @@
         },
         "stars": 0,
         "forks": 0,
-        "lastUpdate": "May 29, 2025, 4:41 PM GMT+1",
+        "lastUpdate": "May 31, 2025, 12:10 AM GMT+1",
         "readme": "Configuração e Execução do Website Print2Go\n\nAntes de executar o website Print2Go, é necessário garantir que o ambiente de desenvolvimento está devidamente configurado. Para tal, devem ser seguidos os seguintes passos:\n\nInstalar o PostgreSQL\nAssegure-se de que o PostgreSQL está instalado e corretamente configurado. [https://www.postgresql.org/].\n\nInstalar o Node.js\nCertifique-se de que o Node.js está instalado no seu sistema. Pode fazer o download em: [https://nodejs.org/].\n\nConexão à Internet\nÉ importante ter acesso à Internet para carregar as bibliotecas externas (como Bootstrap e Three.js via CDN) e para proceder à instalação das dependências do projeto.\n\nInstalar as dependências do projeto\nNa linha de comandos (cmd), na raiz do projeto, execute o seguinte comando para instalar todas as bibliotecas e pacotes necessários:\n\nnpm install\n\nExecutar o script de configuração da base de dados\nPara criar a base de dados e as suas respetivas tabelas, execute o seguinte comando:\n\nnpm run setup\n\nSerá solicitado o fornecimento dos dados de ligação à base de dados (host, porta, utilizador e palavra-passe). Como o host, a porta e o utilizador parecem ser sempre os mesmos, será apenas necessário indicar a palavra-passe e um nome para a base de dados.\n\nIniciar o servidor\nApós a conclusão do procedimento de configuração, o servidor será iniciado automaticamente. Para iniciar a aplicação manualmente no futuro, basta executar:\n\nnpm start\n\nApós estes procedimentos, a aplicação estará disponível localmente através do seguinte endereço: [http://localhost:3000]"
     }
 ]
