@@ -2,27 +2,26 @@ import {chromium, Page, Browser} from 'playwright';
 import * as scrape from './scraping-elements';
 import fs from 'fs';
 
-const username = '/' + 'torvalds';
-const githubURL: string = 'https://github.com';
-const logValues: boolean = false;
+const GITHUB_URL: string = 'https://github.com';
+const LOGVALUES: boolean = false;
 const headless: boolean = false;
 
 export function logValue(message: string | number) 
 {
-    if (logValues) 
+    if (LOGVALUES)
     {
         console.log(message);
     }
 }
 
-async function main() 
+async function scrapeGithub(username: string) 
 {
-    const url = githubURL + username + '?tab=repositories';
+    const url = GITHUB_URL + ('/' + username) + '?tab=repositories';
 
     try 
     {
         const browser = await chromium.launch({
-            headless: headless
+            HEADLESS: headless
         });
 
         const page = await openPage(browser, url);
@@ -31,9 +30,11 @@ async function main()
 
         const data = await getAllReposData(page, repoLinks);
 
-        fs.writeFileSync('output.json', JSON.stringify(data, null, 4), 'utf-8');
-
+        fs.writeFileSync('scrapeData.json', JSON.stringify(data, null, 4), 'utf-8');
+        
         await browser.close();
+
+        return data;
     }
     catch (error) 
     {
@@ -51,7 +52,7 @@ async function openPage(browser: Browser , url: string)
             waitUntil: 'networkidle'
         });
 
-        console.log('Browser\'s page found');
+        console.log('Github page opened');
 
         return page;
     }
@@ -75,7 +76,7 @@ async function getRepoLinks(page: Page)
             const repo = repoList.locator('li').nth(index);
             const href = await repo.locator('a').first().getAttribute('href');
 
-            repoLinks.push(githubURL + href);
+            repoLinks.push(GITHUB_URL + href);
         }
 
         console.log(repoAmount + ' repository links obtained');
@@ -140,6 +141,8 @@ async function getRepoData(page: Page, name: string)
         return null;
     }
 
+    logValue(`Name: ${name}`);
+
     const about = await scrape.getAbout(mainPanel);
     logValue(`About: ${about}`);
 
@@ -163,4 +166,12 @@ async function getRepoData(page: Page, name: string)
     return repoData;
 }
 
-main();
+const args: string[] = process.argv.slice(2);
+let username: string = 'MukhitKwo';
+
+if (args.length > 0)
+{
+    username = args[0].replace('--', '');
+}
+
+scrapeGithub(username);
