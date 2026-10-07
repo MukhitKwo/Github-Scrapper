@@ -22,18 +22,12 @@ A TypeScript tool using Playwright to extract data from a GitHub user's public r
 
 ## Installation
 
-1. **Clone the repository:**
-   ```bash
-   git clone <repository-url>
-   cd <repository-directory>
-   ```
-
-2. **Install dependencies:**
+1. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. **Install Playwright browser:**
+2. **Install Playwright browser:**
    ```bash
    npx playwright install chromium
    ```
