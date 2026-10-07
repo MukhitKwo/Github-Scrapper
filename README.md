@@ -73,9 +73,3 @@ The output `scrapeData.json` follows this format:
   }
 ]
 ```
-
----
-
-**Note:** This scraper relies on specific GitHub CSS selectors. If GitHub updates their site layout, the selectors in the script may require updates.
-
-Would you like me to create a `.gitignore` file to ensure your `node_modules` and generated JSON files aren't tracked?
